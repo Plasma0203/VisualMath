@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - CNAME
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: cyborg
+    css: styles.css
+    toc: false
+    html-math-method: mathjax
+    include-in-header:
+      - _includes/head-scripts.html
+
+website:
+  title: "Visual Math Lab"
+  site-url: https://www.visualmathlab.com
+  page-navigation: true
+  bread-crumbs: true
+
+  navbar:
+    background: light
+
+  search:
+    location: navbar
+    type: textbox
+
+  sidebar:
+    - style: floating
+      contents:
+        - section: "Computational Math"
+          contents:
+          - section: root-finding/index.qmd
+            contents: "root-finding/*/index.qmd"
+          - section: piecewise-interpolation/index.qmd
+            contents: "piecewise-interpolation/*/index.qmd"
+          - section: differential-equations/index.qmd
+            contents: "differential-equations/*/index.qmd"
+        - section: "Discrete Math"
+          contents:
+          - section: sperners-lemma/index.qmd
+            contents: "sperners-lemma/*/index.qmd"
+        - section: "Data Science"
+          contents:
+          - section: model-fitting/index.qmd
+            contents: "model-fitting/*/index.qmd"
+        - section: "Probability"
+          contents:
+          - section: probability/bayes/index.qmd
+            contents: "probability/bayes/*/index.qmd"
